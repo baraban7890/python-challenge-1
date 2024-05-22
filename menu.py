@@ -214,10 +214,9 @@ for i in range(len(order)):
 
     print(f'\n{item_name}{spaceStringItem}| {price}{spaceStringPrice}| {quantity}{spaceStringNum}')
     
-    totalOrderCost += price*quantity
     
 # 11. Calculate the cost of the order using list comprehension
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
-
+totalOrderCost = sum([x['Price'] * x['Quantity'] for x in order])
 print(f"Your total order cost is ${totalOrderCost}, thanks for shopping at Variety Food Truck! Your food will be right out!")
