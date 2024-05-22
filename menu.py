@@ -118,16 +118,16 @@ while place_order:
                     i += 1
             # 2. Ask customer to input menu item number
 
-            menu_item_number = input("Please input the number of the item that you would like to purchase. ")
+            menu_selection = input("Please input the number of the item that you would like to purchase. ")
             # 3. Check if the customer typed a number
-            if menu_item_number.isdigit():
+            if menu_selection.isdigit():
                 # Convert the menu selection to an integer
-                menu_item_number = int(menu_item_number)
+                menu_selection = int(menu_selection)
 
                 # 4. Check if the menu selection is in the menu items
-                if menu_item_number <= len(menu_items) and menu_item_number >= 1:
+                if menu_selection in menu_items.keys():
                     # Store the item name as a variable
-                    menu_selection = menu_items[menu_item_number]['Item name']
+                    menu_item_name = menu_items[menu_selection]['Item name']
                     # Ask the customer for the quantity of the menu item
                     quantity = input('How much of this item would you like? ')
 
@@ -139,10 +139,10 @@ while place_order:
                         quantity = 1
 
                     # Add the item name, price, and quantity to the order list
-                    print(f"You have ordered {quantity} ({menu_selection})")
+                    print(f"You have ordered {quantity} ({menu_item_name})")
                     item_dict = {}
-                    item_dict['Item Name'] = menu_items[menu_item_number]['Item name']
-                    item_dict['Price'] = menu_items[menu_item_number]['Price']
+                    item_dict['Item Name'] = menu_items[menu_selection]['Item name']
+                    item_dict['Price'] = menu_items[menu_selection]['Price']
                     item_dict['Quantity'] = quantity
                     order.append(item_dict)
 
