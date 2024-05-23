@@ -219,4 +219,4 @@ for i in range(len(order)):
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
 totalOrderCost = sum([x['Price'] * x['Quantity'] for x in order])
-print(f"Your total order cost is ${totalOrderCost}, thanks for shopping at Variety Food Truck! Your food will be right out!")
+print(f"Your total order cost is ${totalOrderCost:.2f}, thanks for shopping at Variety Food Truck! Your food will be right out!")
